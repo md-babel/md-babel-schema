@@ -1,0 +1,44 @@
+{
+  "$id": "/schema/select-block/result",
+
+  "$defs": {
+    "source_location": {
+      "type": "object",
+      "properties": {
+        "line": { "type": "integer", "minumun": 1 },
+        "column": { "type": "integer", "minumun": 1 }
+      }
+    },
+    "source_range": {
+      "type": "object",
+      "properties": {
+        "from": { "$ref": "#/$defs/source_location" },
+        "to": { "$ref": "#/$defs/source_location" }
+      }
+    },
+    "md_block": {
+      "type": "object",
+      "properties": {
+        "range": { "$ref": "#/$defs/source_range" },
+        "type": {
+          "enum": [ "code_block", "table" ]
+        },
+        "language": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        }
+      },
+      "required": [ "range", "type", "content" ]
+    }
+  },
+
+  "type": "object",
+  "properties": {
+    "range": { "$ref": "#/$defs/source_range" },
+    "input": { "$ref": "#/$defs/md_block" },
+    "result": { "$ref": "#/$defs/md_block" },
+    "error": { "$ref": "#/$defs/md_block" }
+  }
+}
