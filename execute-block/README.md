@@ -33,7 +33,8 @@ Somewhat similar to LSP, JSON payloads can be devised to represent the result `(
 
 Given this part of a document:
 
-    Text ...
+
+    ... text ...
     
     ```sh
     dateˇ
@@ -41,12 +42,13 @@ Given this part of a document:
     
     ... more text ...
 
+
 Where `ˇ` denotes the insertion point, and its location is line 101, and its offset is 5.
 
-Then the result of executing the `date` program for the ISO time `2025-04-06T13:44:00+0200` should transform the document into:
+Then the result of executing the `date` program for the ISO time `2025-04-06T13:39:24+0200` should transform the document into:
 
 
-    Text ...
+    ... text ...
     
     ```sh
     dateˇ
@@ -54,10 +56,11 @@ Then the result of executing the `date` program for the ISO time `2025-04-06T13:
 
     <!--Result-->
     ```
-    Sun Apr  6 13:44:00 CEST 2025
+    Sun Apr  6 13:39:24 CEST 2025
     ```
 
     ... more text ...
+
 
 From the user's perspective, the result is inlined as another code block with a metadata comment above.
 
@@ -96,3 +99,10 @@ Running the code block again will update the time in the result block below, ext
   "error": null
 }
 ```
+
+Notice how 
+
+- the location of the insertion point doesn't change,
+- the replacement range behaves as if the user would select and paste,
+- the result's newline is trimmed,
+- surrounding text in the document is not affected.
