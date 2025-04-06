@@ -1,6 +1,6 @@
 {
   "$id": "/schema/execute-block/result",
-  
+
   "$defs": {
     "source_location": {
       "type": "object",
@@ -17,7 +17,7 @@
       }
     }
   },
-  
+
   "type": "object",
   "properties": {
     "range": { "$ref": "#/$defs/source_range" },
@@ -26,10 +26,11 @@
       "type": "string"
     },
     "result": {
-      "type": ["string", "null"]
+      "type": "string"
     },
     "error": {
-      "type": ["string", "null"]
+      "type": "string"
     },
-  }
+  },
+  "required": ["range", "replacement_range", "replacement_string"]
 }
