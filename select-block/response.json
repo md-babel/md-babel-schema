@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:md-babel:select-block:response",
+
+  "$defs": {
+    "sourceLocation": {
+      "type": "object",
+      "properties": {
+        "line": { "type": "integer", "minumun": 1 },
+        "column": { "type": "integer", "minumun": 1 }
+      }
+    },
+    "sourceRange": {
+      "type": "object",
+      "properties": {
+        "from": { "$ref": "urn:md-babel:select-block:response:sourceLocation" },
+        "to": { "$ref": "urn:md-babel:select-block:response:sourceLocation" }
+      }
+    },
+    "mdBlock": {
+      "type": "object",
+      "properties": {
+        "range": { "$ref": "urn:md-babel:select-block:response:sourceRange" },
+        "header": {
+          "type": "string"
+        },
+        "type": {
+          "enum": [ "code-block", "table" ]
+        },
+        "language": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        }
+      },
+      "required": [ "range", "type", "content", "header" ]
+    }
+  },
+
+  "type": "object",
+  "properties": {
+    "range": { "$ref": "urn:md-babel:select-block:response:sourceRange" },
+    "input": { "$ref": "urn:md-babel:select-block:response:mdBlock" },
+    "result": { "$ref": "urn:md-babel:select-block:response:mdBlock" },
+    "error": { "$ref": "urn:md-babel:select-block:response:mdBlock" }
+  }
+}

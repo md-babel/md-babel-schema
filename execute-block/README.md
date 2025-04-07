@@ -72,11 +72,11 @@ The command to perform this change coming from `md-babel` expands the input rang
     "from": { "line": 101, "column": 5 },
     "to": { "line": 101, "column": 5 }
   },
-  "replacement_range": {
+  "replacementRange": {
     "from": { "line": 100, "column": 1 },
     "to": { "line": 102, "column": 4 }
   },
-  "replacement_string": "```sh\ndate\n```\n\n<!--Result:-->\n```\nSun Apr  6 13:39:24 CEST 2025\n```",
+  "replacementString": "```sh\ndate\n```\n\n<!--Result:-->\n```\nSun Apr  6 13:39:24 CEST 2025\n```",
   "result": "Sun Apr  6 13:39:24 CEST 2025\n"
 }
 ```
@@ -89,11 +89,11 @@ Running the code block again will update the time in the result block below, ext
     "from": { "line": 101, "column": 5 },
     "to": { "line": 101, "column": 5 }
   },
-  "replacement_range": {
+  "replacementRange": {
     "from": { "line": 100, "column": 1 },
     "to": { "line": 107, "column": 4 }
   },
-  "replacement_string": "```sh\ndate\n```\n\n<!--Result-->\n```\nSun Apr  6 13:51:47 CEST 2025\n```",
+  "replacementString": "```sh\ndate\n```\n\n<!--Result-->\n```\nSun Apr  6 13:51:47 CEST 2025\n```",
   "result": "Sun Apr  6 13:51:47 CEST 2025\n"
 }
 ```

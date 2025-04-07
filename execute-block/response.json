@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:md-babel:execute-block:response",
+
+  "$defs": {
+    "sourceLocation": {
+      "type": "object",
+      "properties": {
+        "line": { "type": "integer", "minumun": 1 },
+        "column": { "type": "integer", "minumun": 1 }
+      }
+    },
+    "sourceRange": {
+      "type": "object",
+      "properties": {
+        "from": { "$ref": "urn:md-babel:execute-block:response:sourceLocation" },
+        "to": { "$ref": "urn:md-babel:execute-block:response:sourceLocation" }
+      }
+    }
+  },
+
+  "type": "object",
+  "properties": {
+    "range": { "$ref": "urn:md-babel:execute-block:response:sourceRange" },
+    "replacementRange": { "$ref": "urn:md-babel:execute-block:response:sourceRange" },
+    "replacementString": {
+      "type": "string"
+    },
+    "result": {
+      "type": "string"
+    },
+    "error": {
+      "type": "string"
+    },
+  },
+  "required": ["range", "replacementRange", "replacementString"]
+}

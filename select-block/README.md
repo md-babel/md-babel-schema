@@ -48,7 +48,7 @@ The command to select the block and its associated result provided by `md-babel`
       "from": { "line": 100, "column": 1 },
       "to": { "line": 102, "column": 4 }
     },
-    "type": "code_block",
+    "type": "code-block",
     "language": "sh",
     "content": "date"
   },
@@ -58,7 +58,7 @@ The command to select the block and its associated result provided by `md-babel`
       "to": { "line": 107, "column": 4 }
     },
     "header": "Result:",
-    "type": "code_block",
+    "type": "code-block",
     "language": "",
     "content": "Sun Apr  6 13:51:47 CEST 2025",
   }
