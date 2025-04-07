@@ -20,6 +20,9 @@
       "type": "object",
       "properties": {
         "range": { "$ref": "#/$defs/source_range" },
+        "header": {
+          "type": "string"
+        },
         "type": {
           "enum": [ "code_block", "table" ]
         },
@@ -30,7 +33,7 @@
           "type": "string"
         }
       },
-      "required": [ "range", "type", "content" ]
+      "required": [ "range", "type", "content", "header" ]
     }
   },
 

@@ -57,6 +57,7 @@ The command to select the block and its associated result provided by `md-babel`
       "from": { "line": 104, "column": 1 },
       "to": { "line": 107, "column": 4 }
     },
+    "header": "Result:",
     "type": "code_block",
     "language": "",
     "content": "Sun Apr  6 13:51:47 CEST 2025",
@@ -65,4 +66,7 @@ The command to select the block and its associated result provided by `md-babel`
 ```
 
 - Each block (input and result) has its own range and Markdown block type.
+- Each code block range ends after the triple backticks, but before the newline.
+- Code blocks without language provide the empty string.
+- Result blocks pass their metadata comment content as the `header` key.
 - Notably absent: the optional `"error"` key, since no dedicated, persistent error block is in the document.
