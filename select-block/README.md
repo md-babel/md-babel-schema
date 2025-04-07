@@ -25,7 +25,7 @@ Given this part of a document:
     dateˇ
     ```
 
-    <!--Result-->
+    <!--Result:-->
     ```
     Sun Apr  6 13:39:24 CEST 2025
     ```
@@ -40,13 +40,13 @@ The command to select the block and its associated result provided by `md-babel`
 ```json
 {
   "range": {
-    "from": { "line": 104, "column": 5 },
-    "to": { "line": 104, "column": 5 }
+    "from": { "line": 101, "column": 5 },
+    "to": { "line": 101, "column": 5 }
   },
   "input": {
     "range": {
       "from": { "line": 100, "column": 1 },
-      "to": { "line": 103, "column": 1 }
+      "to": { "line": 102, "column": 4 }
     },
     "type": "code_block",
     "language": "sh",
@@ -55,7 +55,7 @@ The command to select the block and its associated result provided by `md-babel`
   "result": {
     "range": {
       "from": { "line": 104, "column": 1 },
-      "to": { "line": 108, "column": 1 }
+      "to": { "line": 107, "column": 4 }
     },
     "type": "code_block",
     "language": "",

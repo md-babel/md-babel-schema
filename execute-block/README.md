@@ -54,7 +54,7 @@ Then the result of executing the `date` program for the ISO time `2025-04-06T13:
     dateˇ
     ```
 
-    <!--Result-->
+    <!--Result:-->
     ```
     Sun Apr  6 13:39:24 CEST 2025
     ```
@@ -69,16 +69,15 @@ The command to perform this change coming from `md-babel` expands the input rang
 ```json
 {
   "range": {
-    "from": { "line": 104, "column": 5 },
-    "to": { "line": 104, "column": 5 }
+    "from": { "line": 101, "column": 5 },
+    "to": { "line": 101, "column": 5 }
   },
   "replacement_range": {
     "from": { "line": 100, "column": 1 },
-    "to": { "line": 103, "column": 1 }
+    "to": { "line": 102, "column": 4 }
   },
-  "replacement_string": "```sh\ndate\n```\n\n<!--Result-->\n```\nSun Apr  6 13:39:24 CEST 2025\n```",
-  "result": "Sun Apr  6 13:39:24 CEST 2025\n",
-  "error": null
+  "replacement_string": "```sh\ndate\n```\n\n<!--Result:-->\n```\nSun Apr  6 13:39:24 CEST 2025\n```",
+  "result": "Sun Apr  6 13:39:24 CEST 2025\n"
 }
 ```
 
@@ -87,16 +86,15 @@ Running the code block again will update the time in the result block below, ext
 ```json
 {
   "range": {
-    "from": { "line": 104, "column": 5 },
-    "to": { "line": 104, "column": 5 }
+    "from": { "line": 101, "column": 5 },
+    "to": { "line": 101, "column": 5 }
   },
   "replacement_range": {
     "from": { "line": 100, "column": 1 },
-    "to": { "line": 108, "column": 1 }
+    "to": { "line": 107, "column": 4 }
   },
   "replacement_string": "```sh\ndate\n```\n\n<!--Result-->\n```\nSun Apr  6 13:51:47 CEST 2025\n```",
-  "result": "Sun Apr  6 13:51:47 CEST 2025\n",
-  "error": null
+  "result": "Sun Apr  6 13:51:47 CEST 2025\n"
 }
 ```
 
@@ -106,3 +104,4 @@ Notice how
 - the replacement range behaves as if the user would select and paste,
 - the result's newline is trimmed,
 - surrounding text in the document is not affected.
+- The `error` key is absent.
